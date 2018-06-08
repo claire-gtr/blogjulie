@@ -1,0 +1,40 @@
+.container {
+  height: calc(100% - 70px);
+  padding-top: 80px;
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+.time-card {
+    font-size: 13px;
+    color: grey;
+}
+
+.title-card {
+    font-family: 'Leckerli One', cursive;
+    font-size: 40px;
+}
+
+.content-card {
+    font-size: 14px;
+    padding-bottom: 25px;
+}
+
+.link-card {
+    font-size: 15px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.add-article {
+  font-size: 15px;
+  padding-top: 15px;
+
+}

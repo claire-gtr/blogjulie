@@ -1,0 +1,25 @@
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="card">
+      <div class="time-card">
+        <%= post.created_at.strftime("%A, %B %e") %>
+      </div>
+      <div class="title-card">
+        <%= post.title %>
+      </div>
+      <div class="content-card">
+        <%= post.content.first(400) %> (...)
+      </div>
+      <div class="link-card">
+        <%= link_to "Lire la suite", post_path(post) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="add-article">
+    <% if user_signed_in? %>
+      <%= link_to "Ajouter un article", new_post_path %>
+    <%end %>
+  </div>
+
+</div>
