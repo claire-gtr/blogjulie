@@ -1,23 +1,32 @@
 <div class="container">
-  <div class="card">
-    <div class="time-card">
-      <%= @post.created_at.strftime("%A, %B %e") %></h6>
-    </div>
-    <div class="title-card">
-      <%= @post.title %>
-    </div>
-    <div class="content-card">
-      <%= @post.content %></p>
-    </div>
+  <div class="row">
 
-    <div class="add-article">
-      <%= link_to "Retour à la liste des articles", root_path %>
-      <% if @post.user == current_user %>
-        <br> <br>
-        <%= link_to "Editer mon article", edit_post_path(@post) %>
-        <br> <br>
-        <%= link_to "Supprimer cet article", post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" } %>
-    <% end %>
+    <div class="card">
+      <div class="time-card">
+        <%= @post.created_at.strftime("%A, %B %e") %>
+      </div>
+      <div class="title-card">
+        <%= @post.title %>
+      </div>
+      <div class="photo-show">
+        <%= cl_image_tag @post.photo, crop: :fill%>
+      </div>
+      <br><br>
+      <div class="content-card">
+        <%= @post.content %>
+      </div>
+
+      <div class="add-article">
+        <%= link_to "Retour à la liste des articles", root_path %>
+        <% if @post.user == current_user %>
+          <br> <br>
+          <%= link_to "Editer mon article", edit_post_path(@post) %>
+          <br> <br>
+          <%= link_to "Supprimer cet article", post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de cet article ?" } %>
+        <% end %>
+      </div>
+
+    </div>
   </div>
-  </div>
+
 </div>

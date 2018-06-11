@@ -13,6 +13,9 @@
       <div class="link-card">
         <%= link_to "Lire la suite", post_path(post) %>
       </div>
+       <div class="photo-index">
+        <%= cl_image_tag post.photo, crop: :fill%>
+      </div>
     </div>
   <% end %>
 
