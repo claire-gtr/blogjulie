@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for(@category) do |f| %>
+    <%= f.input :name, label: "Nom" %>
+    <%= f.button :submit, value: 'Créer cette catégorie'%>
+    <% end %>
+
+
+  <%= link_to "Retour à la liste des catégories", categories_path %>
+</div>

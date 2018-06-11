@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+
+  <div class="container">
+    <% @categories.each do |category| %>
+      <div class="card">
+        <div class="time-card">
+          <%= category.name %>
+          <br>
+          <%= link_to "Supprimer cette catégorie", category_path(category), method: :delete, data: { confirm: "Are you sure ?" } %>
+        </div>
+      </div>
+    <% end %>
+    <div class="add-article">
+        <%= link_to "Ajouter une catégorie", new_category_path %>
+    </div>
+  </div>
+
+<%end %>

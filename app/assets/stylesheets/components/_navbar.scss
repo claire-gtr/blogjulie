@@ -1,6 +1,6 @@
 /* Main navbar */
 .navbar-wagon {
-  background-color: transparent;
+  background-color: #fff;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -15,7 +15,6 @@
 
 .navbar-fixed-top.scrolled {
   background-color: #fff !important;
-  transition: background-color 200ms linear;
 }
 
 /* Logo */
@@ -53,9 +52,12 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   font-size: 30px;
   font-weight: 600;
+}
+.navbar-wagon-item:hover {
+  border-bottom: 1px solid black;
 }
 
 /* Navbar link */

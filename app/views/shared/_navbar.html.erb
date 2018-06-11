@@ -19,34 +19,41 @@
 
 
       <!-- Links when logged in -->
-      <%= link_to "BLOG", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "TRIPS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "CONTACT", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "BLOG", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "VOYAGES", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "BONS PLANS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "DIY", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "ABOUT", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
 
-        <% if user_signed_in? %>
-          <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+          <% if user_signed_in? %>
+            <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to categories_path do %>
+                  <i class="fas fa-folder-open"> Categories </i>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </div>
   </div>
@@ -57,8 +64,9 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">BLOG</a></li>
-        <li><a href="#">TRIPS</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">VOYAGES</a></li>
+        <li><a href="#">BONS PLANS</a></li>
+        <li><a href="#">DIY</a></li>
         <li><a href="#">ABOUT</a></li>
       </ul>
     </div>
