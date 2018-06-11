@@ -1,42 +1,59 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo-wave.png", height: 50 %>
-  <% end %>
+  <div class="navbar-logos">
+    <div class="navbar-logo">
+      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="navbar-logo">
+      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="navbar-logo">
+      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-pinterest"></i></a>
+    </div>
+  </div>
+
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
       <!-- Links when logged in -->
-      <%= link_to "Blog", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Contact", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "About", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "BLOG", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "VOYAGES", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "BONS PLANS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "DIY", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "ABOUT", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
 
-        <% if user_signed_in? %>
-          <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+          <% if user_signed_in? %>
+            <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to categories_path do %>
+                  <i class="fas fa-folder-open"> Categories </i>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </div>
   </div>
@@ -46,10 +63,11 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">VOYAGES</a></li>
+        <li><a href="#">BONS PLANS</a></li>
+        <li><a href="#">DIY</a></li>
+        <li><a href="#">ABOUT</a></li>
       </ul>
     </div>
   </div>
