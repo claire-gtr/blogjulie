@@ -1,0 +1,10 @@
+<div class="container">
+  <%= @category.name %>
+
+<%= simple_form_for([@category, @category_post]) do |f| %>
+    <div class="category-form">
+      <div> <%= f.association :post, required: true, label: "", collection: @posts, include_blank: "Ajouter un post" %> </div>
+      <div> <%= f.submit "Ajouter", class: "btn btn-add" %> </div>
+    </div>
+  <% end %>
+</div>

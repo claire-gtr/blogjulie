@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_095701) do
+ActiveRecord::Schema.define(version: 2018_06_12_081910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 2018_06_11_095701) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories_posts_joins", force: :cascade do |t|
+  create_table "category_posts", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_categories_posts_joins_on_category_id"
-    t.index ["post_id"], name: "index_categories_posts_joins_on_post_id"
+    t.index ["category_id"], name: "index_category_posts_on_category_id"
+    t.index ["post_id"], name: "index_category_posts_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2018_06_11_095701) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories_posts_joins", "categories"
-  add_foreign_key "categories_posts_joins", "posts"
+  add_foreign_key "category_posts", "categories"
+  add_foreign_key "category_posts", "posts"
   add_foreign_key "posts", "users"
 end

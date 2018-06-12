@@ -3,10 +3,17 @@
   <div class="container">
     <% @categories.each do |category| %>
       <div class="card">
-        <div class="time-card">
-          <%= category.name %>
+        <div class="content-card">
+          <strong><%= category.name %></strong>
+          <br>
+          <%= link_to "Ajouter des posts à cette catégorie", new_category_category_post_path(category)%>
           <br>
           <%= link_to "Supprimer cette catégorie", category_path(category), method: :delete, data: { confirm: "Are you sure ?" } %>
+        </div>
+        <div class="time-card">
+          <% category.posts.each do |post| %>
+          <%= post.title %> <br>
+          <% end %>
         </div>
       </div>
     <% end %>

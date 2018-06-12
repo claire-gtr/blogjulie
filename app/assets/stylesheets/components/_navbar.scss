@@ -52,11 +52,16 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   font-size: 30px;
   font-weight: 600;
 }
-.navbar-wagon-item:hover {
+
+.navbar-tabs {
+  text-decoration: none;
+}
+.navbar-tabs:hover {
+  text-decoration: none;
   border-bottom: 1px solid black;
 }
 
