@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name, :categories_posts_join_id, :id)
+    params.require(:category).permit(:name, :category_posts_id, :id)
   end
 
 

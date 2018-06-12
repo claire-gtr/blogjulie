@@ -4,6 +4,6 @@ class Post < ApplicationRecord
   validates :content, presence: true
   mount_uploader :photo, PhotoUploader
 
-  has_many :categories_posts_joins
-  has_many :categories, through: :categories_posts_joins
+  has_many :category_posts
+  has_many :categories, through: :category_posts
 end

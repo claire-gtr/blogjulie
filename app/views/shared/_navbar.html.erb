@@ -17,46 +17,54 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-
-      <!-- Links when logged in -->
+    <div class="navbar-tabs">
       <%= link_to "BLOG", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+    <div class="navbar-tabs">
       <%= link_to "VOYAGES", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+    <div class="navbar-tabs">
       <%= link_to "BONS PLANS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+    <div class="navbar-tabs">
       <%= link_to "DIY", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+    <div class="navbar-tabs">
       <%= link_to "ABOUT", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
+    </div>
 
-          <% if user_signed_in? %>
-            <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
 
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to categories_path do %>
-                  <i class="fas fa-folder-open"> Categories </i>
-                <% end %>
-              </li>
-            </ul>
-          <% end %>
-        </div>
+        <% if user_signed_in? %>
+          <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_path do %>
+                <i class="fas fa-folder-open"> Categories </i>
+              <% end %>
+            </li>
+          </ul>
+        <% end %>
       </div>
-  </div>
+    </div>
+</div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
