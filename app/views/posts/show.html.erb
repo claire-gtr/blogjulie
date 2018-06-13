@@ -3,7 +3,7 @@
 
     <div class="card">
       <div class="time-card">
-        <%= @post.created_at.strftime("%A, %B %e") %>
+        <%= l(@post.created_at,format: :long) %>
       </div>
       <div class="title-card">
         <%= @post.title %>
