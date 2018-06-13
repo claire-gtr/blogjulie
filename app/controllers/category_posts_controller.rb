@@ -19,10 +19,11 @@ class CategoryPostsController < ApplicationController
   end
 
 
+
   private
 
   def category_post_params
-    params.require(:category_post).permit(:post_id, :category_id)
+    params.require(:category_post).permit(:post_id, :category_id, :id)
   end
 
 end

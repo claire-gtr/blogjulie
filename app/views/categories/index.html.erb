@@ -5,14 +5,17 @@
       <div class="card">
         <div class="content-card">
           <strong><%= category.name %></strong>
-          <br>
+          <br> <br>
           <%= link_to "Ajouter des posts à cette catégorie", new_category_category_post_path(category)%>
+          <br>
           <br>
           <%= link_to "Supprimer cette catégorie", category_path(category), method: :delete, data: { confirm: "Are you sure ?" } %>
         </div>
+        <br>
         <div class="time-card">
           <% category.posts.each do |post| %>
           <%= post.title %> <br>
+
           <% end %>
         </div>
       </div>
