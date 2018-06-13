@@ -1,5 +1,5 @@
 <div class="container">
-  <% @posts.each do |post| %>
+  <% Post.joins(:categories).where(categories: {name: "My Shop"}).each do |post| %>
  <div class="card">
       <div class="time-card">
         <%= l(post.created_at,format: :long) %>
