@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
-  resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :posts, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :comments, only: [:index, :new, :create]
+  end
   resources :categories, only: [:index, :new, :create, :destroy] do
-    resources :category_posts, only: [:new, :create]
+    resources :category_posts, only: [:new, :create, :destroy]
   end
   get "/pages/:page" => "pages#show"
 
