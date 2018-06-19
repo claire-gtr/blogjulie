@@ -16,6 +16,33 @@
         <%= @post.content %>
       </div>
 
+      <br><br>
+
+      <div class="review-card">
+        <div id="reviews">
+          <% @post.comments.each do |comment| %>
+            <p> <strong> <%= comment.pseudo %> </strong> </p>
+            <p> "<%= comment.body %>" </p>
+            <%if user_signed_in? %>
+              <%= link_to "Supprimer ce commentaire", post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de ce commentaire?" } %>
+            <% end %>
+            <br><br>
+          <%end%>
+        </div>
+
+        <br><br>
+
+        <div id="add-review">
+          <p> Laisser un commentaire : </p>
+          <%= simple_form_for([@post, @comment]) do |f| %>
+            <%= f.input :pseudo, method: :create, label: false, placeholder: "Votre pseudo"%>
+            <%= f.input :body, method: :create, label: false, placeholder: "Votre commentaire..."%>
+            <%= f.button :submit, "Publier", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+
       <div class="add-article">
         <%= link_to "Retour à la liste des articles", root_path %>
         <% if @post.user == current_user %>
