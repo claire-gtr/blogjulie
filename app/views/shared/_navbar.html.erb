@@ -1,87 +1,97 @@
+
+
 <div class="navbar-wagon navbar-fixed-top">
-  <!-- Logo -->
-  <div class="navbar-logos">
-    <div class="navbar-logo">
-      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-    <div class="navbar-logo">
-      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-facebook-f"></i></a>
-    </div>
-    <div class="navbar-logo">
-      <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-pinterest"></i></a>
-    </div>
+  <div class="navbar-logo-julie">
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "logojulie.png", class: "logo" %>
+  </a>
   </div>
+  <!-- Logo -->
+  <div class="navbar-classic">
+    <div class="navbar-logos">
 
-
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <div class="navbar-tabs">
-      <%= link_to "BLOG", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-    <div class="navbar-tabs">
-      <%= link_to "VOYAGES", "/pages/voyages" , class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-    <div class="navbar-tabs">
-      <%= link_to "BONS PLANS", "/pages/bonsplans", class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-    <div class="navbar-tabs">
-      <%= link_to "DIY", "/pages/diy", class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-    <div class="navbar-tabs">
-      <%= link_to "MY SHOP", "/pages/myshop", class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-    <div class="navbar-tabs">
-      <%= link_to "À PROPOS", "/pages/about", class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-
-        <% if user_signed_in? %>
-          <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to categories_path do %>
-                <i class="fas fa-folder-open"> Categories </i>
-              <% end %>
-            </li>
-          </ul>
-        <% end %>
+      <div class="navbar-logo">
+        <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="navbar-logo">
+        <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="navbar-logo">
+        <a href="https://www.instagram.com/juliebis/", target="_blank"><i class="fab fa-pinterest"></i></a>
       </div>
     </div>
-</div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li> <%= link_to "BLOG", root_path %> </li>
-        <li><a href="/pages/voyages">VOYAGES</a></li>
-        <li><a href="/pages/bonsplans">BONS PLANS</a></li>
-        <li><a href="/pages/diy">DIY</a></li>
-        <li><a href="/pages/myshop">MY SHOP</a></li>
-        <li><a href="/pages/about">À PROPOS</a></li>
-      </ul>
+
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <div class="navbar-tabs">
+        <%= link_to "BLOG", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+      <div class="navbar-tabs">
+        <%= link_to "VOYAGES", "/pages/voyages" , class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+      <div class="navbar-tabs">
+        <%= link_to "BONS PLANS", "/pages/bonsplans", class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+      <div class="navbar-tabs">
+        <%= link_to "DIY", "/pages/diy", class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+      <div class="navbar-tabs">
+        <%= link_to "MY SHOP", "/pages/myshop", class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+      <div class="navbar-tabs">
+        <%= link_to "À PROPOS", "/pages/about", class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+
+          <% if user_signed_in? %>
+            <%= image_tag "julie.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to categories_path do %>
+                  <i class="fas fa-folder-open"> Categories </i>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li> <%= link_to "BLOG", root_path %> </li>
+          <li><a href="/pages/voyages">VOYAGES</a></li>
+          <li><a href="/pages/bonsplans">BONS PLANS</a></li>
+          <li><a href="/pages/diy">DIY</a></li>
+          <li><a href="/pages/myshop">MY SHOP</a></li>
+          <li><a href="/pages/about">À PROPOS</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+  </div>
 

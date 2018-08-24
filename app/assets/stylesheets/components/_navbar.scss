@@ -1,16 +1,30 @@
 /* Main navbar */
+
 .navbar-wagon {
   background-color: #fff;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 200px;
+  padding: 0px 20px;
   position: fixed;
   width: 100%;
   z-index: 500;
   text-decoration: none;
+}
+.navbar-logo-julie {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar-classic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.navbar-wagon-brand img {
+  height: 130px;
 }
 
 .navbar-fixed-top.scrolled {

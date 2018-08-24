@@ -18,5 +18,17 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/instagramfeed' %>
   </body>
+  <script>
+    const photosIndex = document.querySelectorAll('.photo-index');
+
+    function toggleOpen() {
+      this.classList.toggle('photo-index-click');
+    }
+
+    photosIndex.forEach(photo => photo.addEventListener('click', toggleOpen));
+
+
+  </script>
 </html>
