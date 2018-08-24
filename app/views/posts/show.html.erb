@@ -24,7 +24,7 @@
             <p> <strong> <%= comment.pseudo %> </strong> </p>
             <p> "<%= comment.body %>" </p>
             <%if user_signed_in? %>
-              <%= link_to "Supprimer ce commentaire", post_path(@post), method: :delete, data: { confirm: "Confirmer la suppression de ce commentaire?" } %>
+              <%= link_to "Supprimer ce commentaire", post_comment_path(@post, comment), method: :delete, data: { confirm: "Confirmer la suppression de ce commentaire?" } %>
             <% end %>
             <br><br>
           <%end%>
